@@ -1,0 +1,5 @@
+Taller 2 realizado por Tomas Silva y Juan Pabon Vargas
+
+Para compilar, ejecutar y usar la aplicación:
+Usando el main, compilar sin utilizar ningún parámetro de entrada inicial, e indicar el nombre del archivo de texto correspondiente cuando el programa le solicite (escrito como nombre_de_archivo.txt)
+
