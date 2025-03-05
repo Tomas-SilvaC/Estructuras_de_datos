@@ -5,7 +5,7 @@ Laboratorio de Arbol binario
 *******************************************************************************/
 
 #include <iostream>
-#include "ModArbol.h"
+#include "ModArbol/ModArbol.h"
 using namespace std;
 
 int main()
