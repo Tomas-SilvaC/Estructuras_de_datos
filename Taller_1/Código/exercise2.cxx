@@ -1,4 +1,5 @@
 // exercise1.cxx (Andrea Rueda) - creadora del codigo original
+//Documentado por Tomas Silva
 
 // Main program that uses the functionality of rectangle.h
 
