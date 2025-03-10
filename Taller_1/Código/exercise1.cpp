@@ -15,6 +15,7 @@ int numb_inst = 0;
 template <class T>
 class Node {
 public:
+//Solo cambia el conteo de contador de nodos, tras agregar o eliminar un nodo
   Node (const T &value, Node<T> *next = 0) {
     value_ = value;
     next_ = next;
@@ -28,6 +29,7 @@ public:
          << " are in existence right now" << endl;
     next_ = 0;
   }
+  //variables del template nodo (get y set en otras palabaras)
   Node<T>* next () const { 
     return next_; 
   }
@@ -65,15 +67,16 @@ public:
 
     while (marker != 0) {
       if (marker->value() == item_to_remove) {
-        if (temp == 0) { // marker is the first element in the list
+        if (temp == 0) { // En caso de que el marcador sea el primero en la lista
           if (marker->next() == 0) {
             head_ = 0;
-            delete marker; // marker is the only element in the list
+            delete marker; // Y si fuese el UNICO elemento de esa lista
             marker = 0;
           } else {
-            head_ = new Node<T>(marker->value(), marker->next());
+            head_ = new Node<T>(marker->value(), marker->next()); //No es necesaria esta linea de codigo
             delete marker;
             marker = 0;
+            //Crea el nodo y borra el contenido de inmediato
           }
           return 0;
         } else {
@@ -83,15 +86,16 @@ public:
           return 0;
         }
       }
-      marker = 0;  // reset the marker
+      marker = 0;  // reinicia el marcador
       temp = marker;
       marker = marker->next();
     }
 
-    return -1;	// failure
+    return -1;	// en caso de fallo
   }
 
   void print (void) {
+    //Imprime el marcador (es la funcion principal de impresión)
     Node<T> *marker = head_;
     while (marker != 0) {
       cout << marker->value() << endl;
@@ -100,6 +104,7 @@ public:
   }
 
 private:
+  //Elimina los marcadores del nodo
   void delete_nodes (void) {
     Node<T> *marker = head_;
     while (marker != 0) {
@@ -114,16 +119,17 @@ private:
 
 int main (int argc, char **argv) {
   LinkedList<int> *list = new LinkedList<int> ();
-
+  //Inserta a la lista los valores en orden
   list->insert (1);
   list->insert (2);
   list->insert (3);
   list->insert (4);
-
+  //Muestra la lista creada
   cout << "The fully created list is:" << endl;
   list->print ();
 
   cout << endl << "Now removing elements:" << endl;
+  //Elimina los nodos uno tras otro usando el metodo de "remove()" creado anteriormente
   list->remove (4);
   list->print ();
   cout << endl;
@@ -139,6 +145,7 @@ int main (int argc, char **argv) {
   list->remove (3);
   list->print ();
 
+  //Borra la lista de memoria
   delete list;
 
   return 0;
