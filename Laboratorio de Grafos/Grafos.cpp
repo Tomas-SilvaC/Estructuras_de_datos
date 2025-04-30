@@ -1,5 +1,5 @@
 /***************************************************************************************
-|Autores: Tomas Silva, Juan PabC3n Vargas                                               |
+|Autores: Tomas Silva, Juan Pabon Vargas                                               |
 |Estructuras de datos                                                                  |
 |J.Corredor                                                                            |
 |Laboratorio de Grafos                                                                 |
