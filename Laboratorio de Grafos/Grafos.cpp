@@ -187,12 +187,12 @@ public:
 	bool hamCycle(bool graph[][10]);
 	void printSolution();
 };
-
+//Revisa si es seguro, returna si lo es o no
 bool Hamiltonian::isSafe(bool graph[][10], int pos)
 {
 	if (graph [ path[pos-1] ][ v ] == 0)
 		return false;
-
+	
 	for (int i = 0; i < pos; i++)
 		if (path[i] == v)
 			return false;
